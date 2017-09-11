@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dani11/Dropbox/prog/progC/Cpp/LibSRM-master/libsrm/srm.h
+
+/Users/dani11/Dropbox/prog/progC/Cpp/LibSRM-master/libsrm/srm_test.cpp
+srm.h
+/Users/dani11/Dropbox/prog/progC/Cpp/LibSRM-master/libsrm/srm.h
+cstdio
+-
+cstdlib
+-
+chrono
+-
+ctime
+-
+

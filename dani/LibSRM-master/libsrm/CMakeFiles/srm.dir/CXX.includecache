@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dani11/Dropbox/prog/progC/Cpp/LibSRM-master/libsrm/srm.cpp
+srm.h
+/Users/dani11/Dropbox/prog/progC/Cpp/LibSRM-master/libsrm/srm.h
+iostream
+-
+cmath
+-
+
+/Users/dani11/Dropbox/prog/progC/Cpp/LibSRM-master/libsrm/srm.h
+
