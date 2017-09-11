@@ -5,8 +5,8 @@ from skimage.exposure import equalize_hist
 from pysrm import srm
 
 if __name__ == '__main__':
-    img = img_as_ubyte(equalize_hist(io.imread('test.png')))
-    avg_out, lbl_out = srm.segment(img, q=15)
+    img = img_as_ubyte(equalize_hist(io.imread('data/rocks.png')))
+    avg_out, lbl_out = srm.segment(img, q=8)
     plt.figure()
     plt.imshow(avg_out, cmap='gray')
     plt.show()
