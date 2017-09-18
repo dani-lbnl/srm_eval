@@ -14,7 +14,7 @@ if __name__ == '__main__':
     
 # %% File paths
     inputPath = '/Users/dani/Dropbox/prog/Apps_CIP/srm_eval/py3/LibSRM-master/data/' 
-    file = "beads.tif"	#cmc.tif gambier.tif	rocks.png
+    file = "beads.png"#"rocks.png"	 "cmc.png" "gambier.png"	"beads.png"
     bVisualize = True
     bSaveResult = True    
     minSize = 50
@@ -28,14 +28,10 @@ if __name__ == '__main__':
     avg_out, lbl_out = srm.segment(img2, q=32)
     mask = avg_out > filters.threshold_otsu(avg_out)
     #mask = segmentation.clear_border(mask)
-    labels = label(mask)
-    result = np.zeros_like(mask)
-    for R in regionprops(labels):
-        if R.area > minSize:
-            for c in R.coords:
-                result[c[0],c[1]]=1
-
-    result = morphology.binary_dilation(result>0, morphology.disk(2))
+    #labels = label(mask)
+    result = morphology.remove_small_objects(mask, minSize, connectivity=2) 
+    morphology.remove_small_holes(result, min_size=100, connectivity=4, in_place=True)
+    #result = morphology.binary_dilation(result>0, morphology.disk(2))
     result = img_as_float(result)
 #%% Visualization for debugging
     if (bVisualize):
